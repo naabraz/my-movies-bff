@@ -1,0 +1,11 @@
+type Movie {
+  id: ID,
+  posterPath: String
+  title: String
+  releaseDate: String
+  overview: String
+}
+
+type Query {
+  popularMovies: [Movie]
+}

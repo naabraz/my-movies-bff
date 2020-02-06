@@ -2,7 +2,10 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { createServer } from 'http';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import { schema } from './src/schema';
+
+dotenv.config();
 
 const app = express();
 const server = new ApolloServer({ schema });

@@ -39,6 +39,7 @@
     "graphql": "^14.6.0",
     "graphql-import-node": "^0.0.4",
     "graphql-tools": "^4.0.6",
-    "http": "^0.0.0"
+    "http": "^0.0.0",
+    "node-fetch": "^2.6.0"
   }
 }

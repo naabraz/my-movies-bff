@@ -1,5 +1,5 @@
-import HelloWorld from './HelloWorld.graphql';
+import PopularMovies from './PopularMovies.graphql';
 
 export const types = [
-  HelloWorld
+  PopularMovies
 ];
