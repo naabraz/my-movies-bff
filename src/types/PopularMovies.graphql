@@ -1,10 +1,11 @@
 type Movie {
+  id: ID,
   posterPath: String
   title: String
   releaseDate: String
   overview: String
 }
 
-extend type Query {
+type Query {
   popularMovies: [Movie]
 }
