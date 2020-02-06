@@ -1,7 +1,7 @@
 import { IResolvers } from 'graphql-tools';
 
-import { HelloWorldResolver } from './HelloWorld';
+import { PopularMoviesResolver } from './PopularMovies';
 
 export const resolvers: IResolvers[] = [
-  HelloWorldResolver
+  PopularMoviesResolver
 ];

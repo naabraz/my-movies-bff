@@ -1,0 +1,10 @@
+type Movie {
+  posterPath: String
+  title: String
+  releaseDate: String
+  overview: String
+}
+
+extend type Query {
+  popularMovies: [Movie]
+}
