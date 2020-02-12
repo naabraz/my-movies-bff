@@ -7,7 +7,7 @@
     "lint": "./node_modules/.bin/tslint src/*ts",
     "prepush": "yarn run lint",
     "start:dev": "yarn run build:dev",
-    "build:dev": "nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts,graphql"
+    "build:dev": "nodemon 'server.ts' --exec 'ts-node' server.ts -e ts,graphql"
   },
   "repository": "git@github.com:naabraz/my-movies-bff.git",
   "author": "Natalia Braz <naabraz@gmail.com>",
@@ -27,8 +27,19 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@types/compression": "^1.0.1",
+    "@types/express": "^4.17.2",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^13.7.0",
     "apollo-server": "^2.9.13",
+    "apollo-server-express": "^2.9.16",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "graphql": "^14.5.8"
+    "express": "^4.17.1",
+    "graphql": "^14.6.0",
+    "graphql-import-node": "^0.0.4",
+    "graphql-tools": "^4.0.6",
+    "http": "^0.0.0",
+    "node-fetch": "^2.6.0"
   }
 }
