@@ -1,13 +1,12 @@
-import fetch from 'node-fetch';
-
 import { PopularMovies } from './IPopularMovies';
+import { doRequest } from '../utils';
 
 const handlePopularMovies = ({ results }: { results: any }): PopularMovies[] => {
   const popularMovies = results.map((movie: any) => ({
     id: movie.id,
-    posterPath: movie.posterPath,
+    posterPath: movie.poster_path,
     title: movie.title,
-    releaseDate: movie.releaseDate,
+    releaseDate: movie.release_date,
     overview: movie.overview,
   }));
 
@@ -15,11 +14,9 @@ const handlePopularMovies = ({ results }: { results: any }): PopularMovies[] => 
 }
 
 export const getPopularMovies = async (): Promise<PopularMovies[]> => {
-  const API_URL = process.env.API_URL
-  const API_KEY = process.env.API_KEY
+  const endpoint = 'movie/popular';
 
-  const response = await fetch(`${API_URL}/movie/popular?api_key=${API_KEY}`);
-  const jsonResponse = await response.json();
+  const popularMovies = await doRequest(endpoint);
 
-  return handlePopularMovies(jsonResponse);
+  return handlePopularMovies(popularMovies);
 };
