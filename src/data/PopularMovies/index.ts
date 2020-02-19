@@ -1,3 +1,1 @@
-import { getPopularMovies } from './GetPopularMovies';
-
-export { getPopularMovies };
+export { getPopularMovies, handlePopularMovies } from './GetPopularMovies';

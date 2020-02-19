@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import utils from '../utils';
-import { getPopularMovies, handlePopularMovies } from './GetPopularMovies';
+import { getPopularMovies, handlePopularMovies } from './';
 
 describe('Given GetPopularMovies', () => {
   const mock = {
