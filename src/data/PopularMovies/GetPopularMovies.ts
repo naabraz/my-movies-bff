@@ -1,7 +1,7 @@
+import utils from '../utils';
 import { PopularMovies } from './IPopularMovies';
-import { doRequest } from '../utils';
 
-const handlePopularMovies = ({ results }: { results: any }): PopularMovies[] => {
+export const handlePopularMovies = ({ results }: { results: any }): PopularMovies[] => {
   const popularMovies = results.map((movie: any) => ({
     id: movie.id,
     posterPath: movie.poster_path,
@@ -11,12 +11,12 @@ const handlePopularMovies = ({ results }: { results: any }): PopularMovies[] => 
   }));
 
   return popularMovies;
-}
+};
 
 export const getPopularMovies = async (): Promise<PopularMovies[]> => {
   const endpoint = 'movie/popular';
 
-  const popularMovies = await doRequest(endpoint);
+  const popularMovies = await utils.doRequest(endpoint);
 
   return handlePopularMovies(popularMovies);
 };
