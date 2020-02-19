@@ -1,5 +1,3 @@
 import PopularMovies from './PopularMovies.graphql';
 
-export const types = [
-  PopularMovies
-];
+export const types = [PopularMovies];
