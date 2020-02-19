@@ -1,3 +1,3 @@
 import { doRequest } from './Request';
 
-export { doRequest };
+export default { doRequest };
