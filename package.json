@@ -4,7 +4,7 @@
   "description": "git@github.com:naabraz/my-movies-bff.git",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/tslint src/*ts",
+    "lint": "eslint '**/*.ts'",
     "prepush": "yarn run lint",
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'server.ts' --exec 'ts-node' server.ts -e ts,graphql",

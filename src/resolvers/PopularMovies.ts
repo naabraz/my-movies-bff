@@ -5,7 +5,7 @@ import { PopularMovies } from '../data/PopularMovies/IPopularMovies';
 
 export const PopularMoviesResolver: IResolvers = {
   Query: {
-    async popularMovies(_: void, args: void): Promise<PopularMovies[]> {
+    async popularMovies(): Promise<PopularMovies[]> {
       return getPopularMovies();
     },
   },
