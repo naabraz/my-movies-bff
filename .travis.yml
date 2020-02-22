@@ -1,0 +1,12 @@
+stages:
+  - name: test
+    if: branch = master
+jobs:
+  include:
+    - stage: test
+  language: node_js
+  node_js: 12.14.1
+  install:
+    - yarn install
+  script:
+    - yarn eslint
