@@ -1,4 +1,4 @@
-import utils from '../utils';
+import { doRequest } from '../utils';
 import { MoviesResponse, PopularMovies } from './interfaces';
 
 export const handlePopularMovies = (movies: { results: MoviesResponse[] }): PopularMovies[] => {
@@ -17,7 +17,7 @@ export const handlePopularMovies = (movies: { results: MoviesResponse[] }): Popu
 export const getPopularMovies = async (): Promise<PopularMovies[]> => {
   const endpoint = 'movie/popular';
 
-  const popularMovies = await utils.doRequest(endpoint);
+  const popularMovies = await doRequest(endpoint);
 
   return handlePopularMovies(popularMovies);
 };

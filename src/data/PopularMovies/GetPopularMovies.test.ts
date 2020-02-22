@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import utils from '../utils';
+import { doRequest } from '../utils';
 import { getPopularMovies, handlePopularMovies } from './';
+
+jest.mock('../utils', () => ({
+  doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
+}));
 
 describe('Given GetPopularMovies', () => {
   const mockResults = [
@@ -16,10 +20,9 @@ describe('Given GetPopularMovies', () => {
   ];
 
   it('Should call doRequest util to get popularMovies', async () => {
-    utils.doRequest = jest.fn().mockImplementation(() => ({ results: [] }));
     await getPopularMovies();
 
-    expect(utils.doRequest).toHaveBeenCalled();
+    expect(doRequest).toHaveBeenCalled();
   });
 
   it('Should return handled popular movies', () => {

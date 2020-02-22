@@ -1,3 +1,1 @@
-import { getPopularMovies } from './PopularMovies';
-
-export { getPopularMovies };
+export { getPopularMovies } from './PopularMovies';
