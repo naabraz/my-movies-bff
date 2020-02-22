@@ -8,13 +8,13 @@ stages:
 jobs:
   include:
     - stage: test
-  language: node_js
-  node_js: 12.14.1
-  install:
-    - yarn install
-    - npm install codecov -g
-  script:
-    - yarn lint
-    - yarn test --coverage
-  after_success:
-    - codecov
+      language: node_js
+      node_js: 12.14.1
+      install:
+        - yarn install
+        - npm install codecov -g
+      script:
+        - yarn lint
+        - yarn test --coverage
+      after_success:
+        - codecov
