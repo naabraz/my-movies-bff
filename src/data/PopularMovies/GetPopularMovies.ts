@@ -1,8 +1,9 @@
 import utils from '../utils';
-import { PopularMovies } from './IPopularMovies';
+import { MoviesResponse, PopularMovies } from './interfaces';
 
-export const handlePopularMovies = ({ results }: { results: any }): PopularMovies[] => {
-  const popularMovies = results.map((movie: any) => ({
+export const handlePopularMovies = (movies: { results: [] }): PopularMovies[] => {
+  const { results } = movies;
+  const popularMovies = results.map((movie: MoviesResponse) => ({
     id: movie.id,
     posterPath: movie.poster_path,
     title: movie.title,
