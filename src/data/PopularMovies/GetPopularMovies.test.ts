@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
+import { getPopularMovies } from '../';
 import { doRequest } from '../utils';
-import { getPopularMovies, handlePopularMovies } from './';
+import { handlePopularMovies } from './GetPopularMovies';
 
 jest.mock('../utils', () => ({
   doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
