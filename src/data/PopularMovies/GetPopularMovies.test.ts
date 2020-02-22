@@ -19,7 +19,15 @@ describe('Given GetPopularMovies', () => {
     },
   ];
 
-  it('Should call doRequest util to get popularMovies', async () => {
+  it('Should have getPopularMovies function', () => {
+    expect(getPopularMovies).toEqual(expect.any(Function));
+  });
+
+  it('Should have handlePopularMovies function', () => {
+    expect(handlePopularMovies).toEqual(expect.any(Function));
+  });
+
+  it('Should call doRequest util when popularMovies is called', async () => {
     await getPopularMovies();
 
     expect(doRequest).toHaveBeenCalled();
