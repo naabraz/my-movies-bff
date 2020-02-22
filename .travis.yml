@@ -12,7 +12,8 @@ jobs:
   node_js: 12.14.1
   install:
     - yarn install
+    - yarn global add codecov
   script:
     - yarn lint
-    - yarn test
-    - bash <(curl -s https://codecov.io/bash)
+    - yarn test --coverage
+    - codecov
