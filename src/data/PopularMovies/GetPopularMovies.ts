@@ -15,9 +15,7 @@ export const handlePopularMovies = (movies: { results: MoviesResponse[] }): Popu
 };
 
 export const getPopularMovies = async (): Promise<PopularMovies[]> => {
-  const endpoint = 'movie/popular';
-
-  const popularMovies = await doRequest(endpoint);
+  const popularMovies = await doRequest('movie/popular');
 
   return handlePopularMovies(popularMovies);
 };
