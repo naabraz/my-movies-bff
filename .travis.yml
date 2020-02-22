@@ -15,3 +15,4 @@ jobs:
   script:
     - yarn lint
     - yarn test
+    - bash <(curl -s https://codecov.io/bash)
