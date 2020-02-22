@@ -1,3 +1,1 @@
-import { doRequest } from './Request';
-
-export default { doRequest };
+export { doRequest } from './Request';
