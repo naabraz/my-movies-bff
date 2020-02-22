@@ -1,7 +1,9 @@
 import { doRequest } from '../utils';
 import { MoviesResponse, PopularMovies } from './interfaces';
 
-export const handlePopularMovies = (movies: { results: MoviesResponse[] }): PopularMovies[] => {
+export const handlePopularMovies = (movies: {
+  results: MoviesResponse[];
+}): PopularMovies[] => {
   const { results } = movies;
   const popularMovies = results.map((movie: MoviesResponse) => ({
     id: movie.id,

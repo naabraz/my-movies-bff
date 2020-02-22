@@ -6,7 +6,7 @@ jest.mock('../utils', () => ({
   doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
 }));
 
-describe('Given GetPopularMovies', () => {
+describe('Given GetPopularMovies module', () => {
   const mockResults = [
     {
       popularity: 451.291,
