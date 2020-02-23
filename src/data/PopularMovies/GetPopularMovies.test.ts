@@ -35,29 +35,29 @@ describe('Given GetPopularMovies module', () => {
     expect(handlePopularMovies).toEqual(expect.any(Function));
   });
 
-  describe('Given getPopularMovies function call', () => {
-    it('Should call doRequest', async () => {
-      await getPopularMovies();
-      expect(doRequest).toHaveBeenCalled();
-    });
-  });
+  // describe('Given getPopularMovies function call', () => {
+  //   it('Should call doRequest', async () => {
+  //     await getPopularMovies();
+  //     expect(doRequest).toHaveBeenCalled();
+  //   });
+  // });
 
-  describe('Given handlePopularMovies function', () => {
-    it('Should return handled popular movies', async () => {
-      const popularMovies = await handlePopularMovies({ results: mockResults });
-      const moviesExpected = {
-        id: 419704,
-        overview: '',
-        posterPath: 'baseUrl/100/foo.jpg',
-        releaseDate: '0000-00-00',
-        title: 'Foo title',
-      };
+  // describe('Given handlePopularMovies function', () => {
+  //   it('Should return handled popular movies', async () => {
+  //     const popularMovies = await handlePopularMovies({ results: mockResults });
+  //     const moviesExpected = {
+  //       id: 419704,
+  //       overview: '',
+  //       posterPath: 'baseUrl/100/foo.jpg',
+  //       releaseDate: '0000-00-00',
+  //       title: 'Foo title',
+  //     };
 
-      expect(popularMovies).toEqual([moviesExpected]);
-    });
+  //     expect(popularMovies).toEqual([moviesExpected]);
+  //   });
 
-    it('Should call getImagesConfiguration', () => {
-      expect(getImagesConfiguration).toHaveBeenCalled();
-    });
-  });
+  //   it('Should call getImagesConfiguration', () => {
+  //     expect(getImagesConfiguration).toHaveBeenCalled();
+  //   });
+  // });
 });
