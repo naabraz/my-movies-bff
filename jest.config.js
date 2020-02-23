@@ -6,4 +6,9 @@ module.exports = {
     '!src/types/*.{ts,}',
     '!src/schema/*.{ts,}',
   ],
+  coverageThreshold: {
+    global: {
+      statements: 80,
+    },
+  },
 };
