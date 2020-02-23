@@ -2,9 +2,16 @@
 import { getPopularMovies } from '../';
 import { doRequest } from '../utils';
 import { handlePopularMovies } from './GetPopularMovies';
+import { getImagesConfiguration } from './utils';
 
 jest.mock('../utils', () => ({
   doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
+}));
+
+jest.mock('./utils', () => ({
+  getImagesConfiguration: jest
+    .fn()
+    .mockResolvedValue({ baseUrl: 'baseUrl/', posterSize: '100' }),
 }));
 
 describe('Given GetPopularMovies module', () => {
@@ -28,22 +35,29 @@ describe('Given GetPopularMovies module', () => {
     expect(handlePopularMovies).toEqual(expect.any(Function));
   });
 
-  it('Should call doRequest util when popularMovies is called', async () => {
-    await getPopularMovies();
-
-    expect(doRequest).toHaveBeenCalled();
+  describe('Given getPopularMovies function call', () => {
+    it('Should call doRequest', async () => {
+      await getPopularMovies();
+      expect(doRequest).toHaveBeenCalled();
+    });
   });
 
-  it('Should return handled popular movies', () => {
-    const popularMovies = handlePopularMovies({ results: mockResults });
-    expect(popularMovies).toEqual([
-      {
+  describe('Given handlePopularMovies function', () => {
+    it('Should return handled popular movies', async () => {
+      const popularMovies = await handlePopularMovies({ results: mockResults });
+      const moviesExpected = {
         id: 419704,
         overview: '',
-        posterPath: '/foo.jpg',
+        posterPath: 'baseUrl/100/foo.jpg',
         releaseDate: '0000-00-00',
         title: 'Foo title',
-      },
-    ]);
+      };
+
+      expect(popularMovies).toEqual([moviesExpected]);
+    });
+
+    it('Should call getImagesConfiguration', () => {
+      expect(getImagesConfiguration).toHaveBeenCalled();
+    });
   });
 });
