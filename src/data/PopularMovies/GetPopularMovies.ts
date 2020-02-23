@@ -1,13 +1,16 @@
 import { doRequest } from '../utils';
 import { MoviesResponse, PopularMovies } from './interfaces';
+import { getImagesConfiguration } from './utils';
 
-export const handlePopularMovies = (movies: {
+export const handlePopularMovies = async (movies: {
   results: MoviesResponse[];
-}): PopularMovies[] => {
+}): Promise<PopularMovies[]> => {
   const { results } = movies;
+  const { baseUrl, posterSize } = await getImagesConfiguration();
+
   const popularMovies = results.map((movie: MoviesResponse) => ({
     id: movie.id,
-    posterPath: movie.poster_path,
+    posterPath: `${baseUrl}${posterSize}${movie.poster_path}`,
     title: movie.title,
     releaseDate: movie.release_date,
     overview: movie.overview,
