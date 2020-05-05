@@ -5,6 +5,8 @@
 
 My Movies BFF is a backend study project built with [GraphQL](https://graphql.org/), [TypeScript](https://www.typescriptlang.org/) and [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
 
+This project consumes [The Movie DB](https://www.themoviedb.org/documentation/api) API to get all the data about movies.
+
 ## Installing
 
 We are using [Yarn](https://yarnpkg.com/). Run `yarn` to install all dependencies, then run `yarn start:dev` to start the application.
