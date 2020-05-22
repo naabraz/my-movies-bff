@@ -9,9 +9,11 @@ jest.mock('../utils', () => ({
 }));
 
 jest.mock('./utils', () => ({
-  getImagesConfiguration: jest
-    .fn()
-    .mockResolvedValue({ baseUrl: 'baseUrl/', posterSize: '100' }),
+  getImagesConfiguration: jest.fn().mockResolvedValue({
+    baseUrl: 'baseUrl/',
+    posterSize: '100',
+    backdropSize: '200',
+  }),
 }));
 
 describe('Given GetPopularMovies module', () => {
@@ -24,6 +26,7 @@ describe('Given GetPopularMovies module', () => {
       poster_path: '/foo.jpg',
       overview: '',
       original_language: 'en',
+      backdrop_path: '/backdrop_path.jpg',
     },
   ];
 
@@ -51,6 +54,7 @@ describe('Given GetPopularMovies module', () => {
         posterPath: 'baseUrl/100/foo.jpg',
         releaseDate: '0000-00-00',
         title: 'Foo title',
+        backdropPath: 'baseUrl/200/backdrop_path.jpg',
       };
 
       expect(popularMovies).toEqual([moviesExpected]);

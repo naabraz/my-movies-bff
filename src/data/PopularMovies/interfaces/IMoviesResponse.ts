@@ -4,4 +4,5 @@ export interface MoviesResponse {
   title: string;
   release_date: string;
   overview: string;
+  backdrop_path: string;
 }

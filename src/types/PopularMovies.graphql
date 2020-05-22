@@ -4,6 +4,7 @@ type Movie {
   title: String
   releaseDate: String
   overview: String
+  backdropPath: String
 }
 
 type Query {

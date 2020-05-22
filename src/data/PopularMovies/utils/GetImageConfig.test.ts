@@ -4,7 +4,11 @@ import { getImagesConfiguration } from './';
 
 jest.mock('../../utils', () => ({
   doRequest: jest.fn().mockResolvedValue({
-    images: { secure_base_url: 'baseUrl', poster_sizes: ['3', '2', '1'] },
+    images: {
+      secure_base_url: 'baseUrl',
+      poster_sizes: ['3', '2', '1'],
+      backdrop_sizes: ['3', '2', '1'],
+    },
   }),
 }));
 
