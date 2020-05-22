@@ -6,7 +6,7 @@ export const handlePopularMovies = async (movies: {
   results: MoviesResponse[];
 }): Promise<PopularMovies[]> => {
   const { results } = movies;
-  const { baseUrl, posterSize } = await getImagesConfiguration();
+  const { baseUrl, posterSize, backdropSize } = await getImagesConfiguration();
 
   const popularMovies = results.map((movie: MoviesResponse) => ({
     id: movie.id,
@@ -14,6 +14,7 @@ export const handlePopularMovies = async (movies: {
     title: movie.title,
     releaseDate: movie.release_date,
     overview: movie.overview,
+    backdropPath: `${baseUrl}${backdropSize}${movie.backdrop_path}`,
   }));
 
   return popularMovies;
