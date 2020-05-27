@@ -27,6 +27,7 @@ describe('Given GetPopularMovies module', () => {
       overview: '',
       original_language: 'en',
       backdrop_path: '/backdrop_path.jpg',
+      vote_average: 8.1,
     },
   ];
 
@@ -55,6 +56,7 @@ describe('Given GetPopularMovies module', () => {
         releaseDate: '0000-00-00',
         title: 'Foo title',
         backdropPath: 'baseUrl/200/backdrop_path.jpg',
+        voteAverage: 8.1,
       };
 
       expect(popularMovies).toEqual([moviesExpected]);
