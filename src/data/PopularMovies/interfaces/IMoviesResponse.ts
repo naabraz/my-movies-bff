@@ -5,4 +5,5 @@ export interface MoviesResponse {
   release_date: string;
   overview: string;
   backdrop_path: string;
+  vote_average: number;
 }

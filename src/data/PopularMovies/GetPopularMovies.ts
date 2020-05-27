@@ -15,6 +15,7 @@ export const handlePopularMovies = async (movies: {
     releaseDate: movie.release_date,
     overview: movie.overview,
     backdropPath: `${baseUrl}${backdropSize}${movie.backdrop_path}`,
+    voteAverage: movie.vote_average,
   }));
 
   return popularMovies;

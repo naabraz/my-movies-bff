@@ -5,6 +5,7 @@ type Movie {
   releaseDate: String
   overview: String
   backdropPath: String
+  voteAverage: Float
 }
 
 type Query {
