@@ -1,0 +1,1 @@
+export { MovieGenres } from './IMovieGenres';

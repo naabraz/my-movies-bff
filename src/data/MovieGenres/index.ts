@@ -1,0 +1,1 @@
+export { getMovieGenres } from './GetMovieGenres';
