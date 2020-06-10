@@ -1,0 +1,8 @@
+type MovieGenres {
+  id: ID,
+  name: String,
+}
+
+extend type Query {
+  movieGenres(movieId: ID): [MovieGenres]
+}
