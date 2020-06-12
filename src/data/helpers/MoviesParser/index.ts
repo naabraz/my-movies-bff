@@ -1,0 +1,1 @@
+export { handlePopularMovies } from './MoviesParser';
