@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { doRequest } from '../../utils';
+import { doRequest } from '../../../utils';
 import { ImagesConfig } from '../interfaces';
 
 export const getImagesConfiguration = async (): Promise<ImagesConfig> => {

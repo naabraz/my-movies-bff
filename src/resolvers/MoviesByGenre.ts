@@ -1,5 +1,5 @@
 import { getMoviesByGenre } from '../data';
-import { MoviesResponse } from '../data/PopularMovies/interfaces';
+import { MoviesResponse } from '../data/helpers/MoviesParser/interfaces';
 
 export const MoviesByGenreResolver = {
   Query: {

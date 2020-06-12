@@ -1,4 +1,4 @@
-import { MoviesResponse } from '../PopularMovies/interfaces';
+import { MoviesResponse } from '../helpers/MoviesParser/interfaces';
 import { doRequest } from '../utils';
 
 export const getMoviesByGenre = async (

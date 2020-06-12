@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { getPopularMovies } from '../';
+import { handlePopularMovies } from '../helpers';
+import { getImagesConfiguration } from '../helpers/MoviesParser/utils';
 import { doRequest } from '../utils';
-import { handlePopularMovies } from './GetPopularMovies';
-import { getImagesConfiguration } from './utils';
 
 jest.mock('../utils', () => ({
   doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
 }));
 
-jest.mock('./utils', () => ({
+jest.mock('../helpers/MoviesParser/utils', () => ({
   getImagesConfiguration: jest.fn().mockResolvedValue({
     baseUrl: 'baseUrl/',
     posterSize: '100',

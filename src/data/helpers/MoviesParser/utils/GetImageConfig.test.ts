@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { doRequest } from '../../utils';
-import { getImagesConfiguration } from './';
+import { doRequest } from '../../../utils';
+import { getImagesConfiguration } from './GetImageConfig';
 
-jest.mock('../../utils', () => ({
+jest.mock('../../../utils', () => ({
   doRequest: jest.fn().mockResolvedValue({
     images: {
       secure_base_url: 'baseUrl',
