@@ -1860,7 +1860,6 @@ apollo-tracing@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.11.0.tgz#8821eb60692f77c06660fb6bc147446f600aecfe"
   integrity sha512-I9IFb/8lkBW8ZwOAi4LEojfT7dMfUSkpnV8LHQI8Rcj0HtzL9HObQ3woBmzyGHdGHLFuD/6/VHyFD67SesSrJg==
-<<<<<<< HEAD
   dependencies:
     apollo-server-env "^2.4.4"
     apollo-server-plugin-base "^0.9.0"
@@ -1874,11 +1873,6 @@ apollo-upload-client@13.0.0:
     apollo-link "^1.2.12"
     apollo-link-http-common "^0.2.14"
     extract-files "^8.0.0"
-=======
-  dependencies:
-    apollo-server-env "^2.4.4"
-    apollo-server-plugin-base "^0.9.0"
->>>>>>> chore(deps): bump apollo-server from 2.13.0 to 2.14.2
 
 apollo-utilities@^1.0.1, apollo-utilities@^1.3.0:
   version "1.3.4"
