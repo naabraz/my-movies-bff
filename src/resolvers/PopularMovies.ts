@@ -1,9 +1,9 @@
 import { getPopularMovies } from '../data';
-import { PopularMovies } from '../data/PopularMovies/interfaces';
+import { Movie } from '../data/helpers/MoviesParser/interfaces';
 
 export const PopularMoviesResolver = {
   Query: {
-    async popularMovies(): Promise<PopularMovies[]> {
+    async popularMovies(): Promise<Movie[]> {
       return getPopularMovies();
     },
   },
