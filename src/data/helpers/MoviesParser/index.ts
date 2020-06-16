@@ -1,1 +1,1 @@
-export { handlePopularMovies } from './MoviesParser';
+export { handleMovies } from './MoviesParser';

@@ -1,7 +1,7 @@
 import { Movie, MoviesResponse } from './interfaces';
 import { getImagesConfiguration } from './utils';
 
-export const handlePopularMovies = async (movies: {
+export const handleMovies = async (movies: {
   results: MoviesResponse[];
 }): Promise<Movie[]> => {
   const { results } = movies;

@@ -1,10 +1,10 @@
-import { MoviesResponse } from '../helpers/MoviesParser/interfaces';
+import { handleMovies } from '../helpers';
+import { Movie } from '../helpers/MoviesParser/interfaces';
 import { doRequest } from '../utils';
 
-export const getMoviesByGenre = async (
-  genreId: number,
-): Promise<MoviesResponse[]> => {
-  const moviesByGenre = doRequest(`with_genres=${genreId}`);
+export const getMoviesByGenre = async (genreId: number): Promise<Movie[]> => {
+  const url = `discover/movie?with_genres=${genreId}`;
+  const moviesByGenre = await doRequest(url);
 
-  return moviesByGenre;
+  return handleMovies(moviesByGenre);
 };
