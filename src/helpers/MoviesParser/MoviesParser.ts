@@ -1,11 +1,11 @@
-import { Movie, MoviesResponse } from '@interfaces';
-import { getImagesConfiguration } from './utils';
+import { ImageConfig } from 'helpers';
+import { Movie, MoviesResponse } from 'interfaces';
 
-export const handleMovies = async (movies: {
+export const MoviesParser = async (movies: {
   results: MoviesResponse[];
 }): Promise<Movie[]> => {
   const { results } = movies;
-  const { baseUrl, posterSize, backdropSize } = await getImagesConfiguration();
+  const { baseUrl, posterSize, backdropSize } = await ImageConfig();
 
   const popularMovies = results.map((movie: MoviesResponse) => ({
     id: movie.id,

@@ -1,4 +1,4 @@
-import { Movie } from '@interfaces';
+import { Movie } from 'interfaces';
 import { getPopularMovies } from '../data';
 
 export const PopularMoviesResolver = {
