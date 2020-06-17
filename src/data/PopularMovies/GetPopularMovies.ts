@@ -1,9 +1,8 @@
-import { Movie } from '@interfaces';
-import { handleMovies } from '../helpers';
-import { doRequest } from '../utils';
+import { MoviesParser, RestClient } from 'helpers';
+import { Movie } from 'interfaces';
 
 export const getPopularMovies = async (): Promise<Movie[]> => {
-  const popularMovies = await doRequest('movie/popular');
+  const popularMovies = await RestClient('movie/popular');
 
-  return handleMovies(popularMovies);
+  return MoviesParser(popularMovies);
 };

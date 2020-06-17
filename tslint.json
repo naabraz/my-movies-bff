@@ -8,7 +8,7 @@
   "rules": {
     "ordered-imports": true,
     "interface-name": [true, "never-prefix"],
-    "no-implicit-dependencies": [true, ["dev", "@interfaces"]]
+    "no-implicit-dependencies": [true, ["dev", "interfaces", "helpers"]]
   },
   "rulesDirectory": []
 }

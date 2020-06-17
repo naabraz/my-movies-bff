@@ -1,4 +1,4 @@
-import { MovieGenres } from '@interfaces';
+import { MovieGenres } from 'interfaces';
 import { getMovieGenres } from '../data';
 
 export const MovieGenresResolver = {

@@ -1,1 +1,0 @@
-export { getImagesConfiguration } from './GetImageConfig';

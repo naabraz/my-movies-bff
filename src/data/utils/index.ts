@@ -1,1 +1,0 @@
-export { doRequest } from './Request';
