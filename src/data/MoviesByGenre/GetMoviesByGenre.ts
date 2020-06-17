@@ -1,5 +1,5 @@
+import { Movie } from '@interfaces';
 import { handleMovies } from '../helpers';
-import { Movie } from '../helpers/MoviesParser/interfaces';
 import { doRequest } from '../utils';
 
 export const getMoviesByGenre = async (genreId: number): Promise<Movie[]> => {

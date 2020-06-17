@@ -1,5 +1,5 @@
+import { Movie } from '@interfaces';
 import { getPopularMovies } from '../data';
-import { Movie } from '../data/helpers/MoviesParser/interfaces';
 
 export const PopularMoviesResolver = {
   Query: {
