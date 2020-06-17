@@ -1,4 +1,4 @@
-import { Movie, MoviesResponse } from './interfaces';
+import { Movie, MoviesResponse } from '@interfaces';
 import { getImagesConfiguration } from './utils';
 
 export const handleMovies = async (movies: {
