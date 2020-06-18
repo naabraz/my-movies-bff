@@ -62,10 +62,5 @@
 
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
-    "baseUrl": "./src",
-    "paths": {
-      "interfaces": ["interfaces"],
-      "helpers": ["helpers"]
-    },
   }
 }
