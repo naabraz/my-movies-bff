@@ -1,5 +1,5 @@
-import { RestClient } from 'helpers';
-import { MovieGenres } from 'interfaces';
+import { RestClient } from '../../helpers';
+import { MovieGenres } from '../../interfaces';
 
 export const getMovieGenres = async (movieId: number): Promise<MovieGenres> => {
   const movieDetails = await RestClient(`movie/${movieId}`);

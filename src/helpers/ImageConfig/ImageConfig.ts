@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { RestClient } from 'helpers';
-import { ImagesConfig } from 'interfaces';
+import { RestClient } from '../../helpers';
+import { ImagesConfig } from '../../interfaces';
 
 export const ImageConfig = async (): Promise<ImagesConfig> => {
   const { images } = await RestClient('configuration');

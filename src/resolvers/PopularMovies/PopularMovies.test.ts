@@ -1,5 +1,5 @@
-import { getPopularMovies } from '../data';
-import { resolvers } from './';
+import { getPopularMovies } from '../../data';
+import { resolvers } from '..';
 import { PopularMoviesResolver } from './PopularMovies';
 
 jest.mock('../data', () => ({
