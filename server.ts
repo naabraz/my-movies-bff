@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import { createServer } from 'http';
-import { schema } from './src/schema';
+import { schema } from '~schema';
 
 dotenv.config();
 

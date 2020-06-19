@@ -1,5 +1,5 @@
-import { getPopularMovies } from '../../data';
-import { Movie } from '../../interfaces';
+import { getPopularMovies } from '~data';
+import { Movie } from '~interfaces';
 
 export const PopularMoviesResolver = {
   Query: {
