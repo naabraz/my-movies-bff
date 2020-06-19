@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { RestClient } from 'helpers';
-import { ImageConfig } from './ImageConfig';
+import { request } from '~helpers';
+import { imageConfig } from './';
 
-jest.mock('helpers', () => ({
-  doApiRequest: jest.fn().mockResolvedValue({
+jest.mock('~helpers', () => ({
+  request: jest.fn().mockResolvedValue({
     images: {
       secure_base_url: 'baseUrl',
       poster_sizes: ['3', '2', '1'],
@@ -12,15 +12,15 @@ jest.mock('helpers', () => ({
   }),
 }));
 
-describe('Given GetImageConfig module', () => {
-  it('Should have getImagesConfiguration function', () => {
-    expect(ImageConfig).toEqual(expect.any(Function));
+describe('Given imageConfig module', () => {
+  it('Should have imageConfig function', () => {
+    expect(imageConfig).toEqual(expect.any(Function));
   });
 
-  describe('Given getImagesConfiguration function', () => {
-    it('Should call doRequest to get image configuration', async () => {
-      await ImageConfig();
-      expect(RestClient).toHaveBeenCalledWith('configuration');
+  describe('Given imageConfig function', () => {
+    it('Should call request to get image configuration', async () => {
+      await imageConfig();
+      expect(request).toHaveBeenCalledWith('configuration');
     });
   });
 });

@@ -1,9 +1,9 @@
-import { movieGenres } from '../../data';
-import { resolvers } from '..';
-import { MovieGenresResolver } from './movieGenres';
+import { movieGenres } from '~data';
+import { resolvers } from '~resolvers';
+import { movieGenresResolver } from './movieGenres';
 
-jest.mock('../data', () => ({
-  getMovieGenres: jest.fn().mockResolvedValue('getMovieGenres'),
+jest.mock('~data', () => ({
+  movieGenres: jest.fn().mockResolvedValue('movieGenres'),
 }));
 
 describe('Given MovieGenres resolver', () => {
@@ -12,16 +12,16 @@ describe('Given MovieGenres resolver', () => {
   });
 
   it('Should have Query property', () => {
-    expect(MovieGenresResolver).toHaveProperty('Query');
+    expect(movieGenresResolver).toHaveProperty('Query');
   });
 
   it('Should have movieGenres query', () => {
-    expect(MovieGenresResolver.Query).toHaveProperty('movieGenres');
+    expect(movieGenresResolver.Query).toHaveProperty('movieGenres');
   });
 
   describe('Given movieGenres query', () => {
     it('Should call getMovieGenres when movieGenres query is called', async () => {
-      await MovieGenresResolver.Query.movieGenres(
+      await movieGenresResolver.Query.movieGenres(
         { movieId: 3 },
         { movieId: 3 },
         { movieId: 3 },
