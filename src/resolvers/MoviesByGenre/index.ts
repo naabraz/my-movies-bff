@@ -1,1 +1,1 @@
-export { MoviesByGenreResolver } from './MoviesByGenre';
+export { moviesByGenreResolver } from './moviesByGenre';

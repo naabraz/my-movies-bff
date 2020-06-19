@@ -1,11 +1,11 @@
 import { IResolvers } from 'graphql-tools';
 
-import { MovieGenresResolver } from './MovieGenres';
-import { MoviesByGenreResolver } from './MoviesByGenre';
-import { PopularMoviesResolver } from './PopularMovies';
+import { movieGenresResolver } from './movieGenres';
+import { moviesByGenreResolver } from './moviesByGenre';
+import { popularMoviesResolver } from './popularMovies';
 
 export const resolvers: IResolvers[] = [
-  MovieGenresResolver,
-  MoviesByGenreResolver,
-  PopularMoviesResolver,
+  movieGenresResolver,
+  moviesByGenreResolver,
+  popularMoviesResolver,
 ];

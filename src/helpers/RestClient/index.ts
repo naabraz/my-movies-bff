@@ -1,1 +1,1 @@
-export { RestClient } from './RestClient';
+export { restClient } from './restClient';

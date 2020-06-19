@@ -1,1 +1,1 @@
-export { PopularMoviesResolver } from './PopularMovies';
+export { popularMoviesResolver } from './popularMovies';
