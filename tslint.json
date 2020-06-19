@@ -8,7 +8,17 @@
   "rules": {
     "ordered-imports": true,
     "interface-name": [true, "never-prefix"],
-    "no-implicit-dependencies": [true]
+    "no-implicit-dependencies": [
+      true,
+      [
+        "~data",
+        "~helpers",
+        "~interfaces",
+        "~resolvers",
+        "~schema",
+        "~types"
+        ]
+      ]
   },
   "rulesDirectory": []
 }

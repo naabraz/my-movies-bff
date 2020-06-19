@@ -8,7 +8,17 @@
     "prepush": "yarn run lint",
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'server.ts' --exec 'ts-node' server.ts -e ts,graphql",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "link-module-alias"
+  },
+  "_moduleAliases": {
+    "~root": ".",
+    "~data": "src/data",
+    "~helpers": "src/helpers",
+    "~interfaces": "src/interfaces",
+    "~resolvers": "src/resolvers",
+    "~schema": "src/schema",
+    "~types": "src/types"
   },
   "repository": "git@github.com:naabraz/my-movies-bff.git",
   "author": "Natalia Braz <naabraz@gmail.com>",
@@ -44,6 +54,7 @@
     "graphql-import-node": "^0.0.4",
     "graphql-tools": "^6.0.9",
     "http": "^0.0.0",
+    "link-module-alias": "^1.2.0",
     "node-fetch": "^2.6.0"
   }
 }
