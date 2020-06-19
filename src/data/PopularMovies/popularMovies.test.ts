@@ -1,69 +1,27 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { getPopularMovies } from '..';
-import { handlePopularMovies } from '../helpers';
-import { getImagesConfiguration } from '../helpers/MoviesParser/utils';
-import { doRequest } from '../utils';
+import { moviesParser, request } from '~helpers';
+import { popularMovies } from './';
 
-jest.mock('../utils', () => ({
-  doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
+jest.mock('~helpers', () => ({
+  request: jest.fn().mockImplementation(() => ({ results: [] })),
+  moviesParser: jest.fn(),
 }));
 
-jest.mock('../helpers/MoviesParser/utils', () => ({
-  getImagesConfiguration: jest.fn().mockResolvedValue({
-    baseUrl: 'baseUrl/',
-    posterSize: '100',
-    backdropSize: '200',
-  }),
-}));
-
-describe('Given GetPopularMovies module', () => {
-  const mockResults = [
-    {
-      popularity: 451.291,
-      id: 419704,
-      title: 'Foo title',
-      release_date: '0000-00-00',
-      poster_path: '/foo.jpg',
-      overview: '',
-      original_language: 'en',
-      backdrop_path: '/backdrop_path.jpg',
-      vote_average: 8.1,
-    },
-  ];
-
-  it('Should have getPopularMovies function', () => {
-    expect(getPopularMovies).toEqual(expect.any(Function));
+describe('Given popularMovies module', () => {
+  it('Should have popularMovies function', () => {
+    expect(popularMovies).toEqual(expect.any(Function));
   });
 
-  it('Should have handlePopularMovies function', () => {
-    expect(handlePopularMovies).toEqual(expect.any(Function));
-  });
-
-  describe('Given getPopularMovies function call', () => {
-    it('Should call doRequest', async () => {
-      await getPopularMovies();
-      expect(doRequest).toHaveBeenCalled();
+  describe('Given popularMovies function call', () => {
+    it('Should call request', async () => {
+      await popularMovies();
+      expect(request).toHaveBeenCalled();
     });
   });
 
-  describe('Given handlePopularMovies function', () => {
-    it('Should return handled popular movies', async () => {
-      const popularMovies = await handlePopularMovies({ results: mockResults });
-      const moviesExpected = {
-        id: 419704,
-        overview: '',
-        posterPath: 'baseUrl/100/foo.jpg',
-        releaseDate: '0000-00-00',
-        title: 'Foo title',
-        backdropPath: 'baseUrl/200/backdrop_path.jpg',
-        voteAverage: 8.1,
-      };
-
-      expect(popularMovies).toEqual([moviesExpected]);
-    });
-
-    it('Should call getImagesConfiguration', () => {
-      expect(getImagesConfiguration).toHaveBeenCalled();
+  describe('Given moviesParser function', () => {
+    it('Should return parsed popular movies', async () => {
+      expect(moviesParser).toHaveBeenCalled();
     });
   });
 });

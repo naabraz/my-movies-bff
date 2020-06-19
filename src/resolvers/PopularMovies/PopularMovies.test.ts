@@ -1,9 +1,9 @@
-import { popularMovies } from '../../data';
-import { resolvers } from '..';
+import { popularMovies } from '~data';
+import { resolvers } from '~resolvers';
 import { popularMoviesResolver } from './popularMovies';
 
-jest.mock('../data', () => ({
-  getPopularMovies: jest.fn().mockResolvedValue('getPopularMovies'),
+jest.mock('~data', () => ({
+  popularMovies: jest.fn().mockResolvedValue('popularMovies'),
 }));
 
 describe('Given PopularMovies resolver', () => {
@@ -20,7 +20,7 @@ describe('Given PopularMovies resolver', () => {
   });
 
   describe('Given popularMovies query', () => {
-    it('Should call getPopularMovies when popularMovies query is called', async () => {
+    it('Should call ppularMovies when popularMovies query is called', async () => {
       await popularMoviesResolver.Query.popularMovies();
       expect(popularMovies).toHaveBeenCalled();
     });

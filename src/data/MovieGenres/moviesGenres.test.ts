@@ -1,19 +1,19 @@
-import { doRequest } from '../utils';
-import { movieGenres } from '.';
+import { request } from '~helpers';
+import { movieGenres } from './';
 
-jest.mock('../utils', () => ({
-  doRequest: jest.fn().mockImplementation(() => ({ results: [] })),
+jest.mock('~helpers', () => ({
+  request: jest.fn().mockImplementation(() => ({ results: [] })),
 }));
 
-describe('Given GetMovieGenres module', () => {
+describe('Given movieGenres module', () => {
   it('Should have getMovieGenres function', () => {
     expect(movieGenres).toEqual(expect.any(Function));
   });
 
-  describe('Given getPopularMovies function call', () => {
+  describe('Given popularMovies function call', () => {
     it('Should call doRequest', async () => {
       await movieGenres(2);
-      expect(doRequest).toHaveBeenCalled();
+      expect(request).toHaveBeenCalled();
     });
   });
 });
