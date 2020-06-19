@@ -1,3 +1,3 @@
-export { getPopularMovies } from './PopularMovies';
-export { getMovieGenres } from './MovieGenres';
-export { getMoviesByGenre } from './MoviesByGenre';
+export { popularMovies } from './popularMovies';
+export { movieGenres } from './movieGenres';
+export { moviesByGenre } from './moviesByGenre';

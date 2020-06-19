@@ -1,6 +1,6 @@
-import { getMovieGenres } from '../../data';
+import { movieGenres } from '../../data';
 import { resolvers } from '..';
-import { MovieGenresResolver } from './MovieGenres';
+import { MovieGenresResolver } from './movieGenres';
 
 jest.mock('../data', () => ({
   getMovieGenres: jest.fn().mockResolvedValue('getMovieGenres'),
@@ -26,7 +26,7 @@ describe('Given MovieGenres resolver', () => {
         { movieId: 3 },
         { movieId: 3 },
       );
-      expect(getMovieGenres).toHaveBeenCalledWith(3);
+      expect(movieGenres).toHaveBeenCalledWith(3);
     });
   });
 });

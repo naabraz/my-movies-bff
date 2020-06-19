@@ -1,10 +1,10 @@
-import { getPopularMovies } from '~data';
+import { popularMovies } from '~data';
 import { Movie } from '~interfaces';
 
-export const PopularMoviesResolver = {
+export const popularMoviesResolver = {
   Query: {
     async popularMovies(): Promise<Movie[]> {
-      return getPopularMovies();
+      return popularMovies();
     },
   },
 };

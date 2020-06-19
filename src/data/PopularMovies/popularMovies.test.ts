@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { getPopularMovies } from '../';
+import { getPopularMovies } from '..';
 import { handlePopularMovies } from '../helpers';
 import { getImagesConfiguration } from '../helpers/MoviesParser/utils';
 import { doRequest } from '../utils';

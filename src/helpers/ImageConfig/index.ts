@@ -1,1 +1,1 @@
-export { ImageConfig } from './ImageConfig';
+export { imageConfig } from './imageConfig';

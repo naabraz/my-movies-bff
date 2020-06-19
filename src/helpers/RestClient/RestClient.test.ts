@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { RestClient } from './RestClient';
+import { restClient } from './restClient';
 
 jest.mock('node-fetch', () =>
   jest.fn().mockResolvedValue({ json: () => jest.fn() }),
@@ -16,12 +16,12 @@ describe('Given Request module', () => {
   });
 
   it('Should have doRequest function', () => {
-    expect(RestClient).toEqual(expect.any(Function));
+    expect(restClient).toEqual(expect.any(Function));
   });
 
   describe('Given doRequest function', () => {
     it('Should call fetch to request api', async () => {
-      await RestClient('test');
+      await restClient('test');
       expect(fetch).toHaveBeenCalledWith('API_URL/test?api_key=API_KEY');
     });
   });

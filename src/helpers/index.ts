@@ -1,3 +1,3 @@
-export { RestClient } from './RestClient';
-export { ImageConfig } from './ImageConfig';
-export { MoviesParser } from './MoviesParser';
+export { restClient } from './restClient';
+export { imageConfig } from './imageConfig';
+export { moviesParser } from './moviesParser';

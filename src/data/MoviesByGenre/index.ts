@@ -1,1 +1,1 @@
-export { getMoviesByGenre } from './GetMoviesByGenre';
+export { moviesByGenre } from './moviesByGenre';

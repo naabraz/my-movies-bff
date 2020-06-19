@@ -1,1 +1,1 @@
-export { MoviesParser } from './MoviesParser';
+export { moviesParser } from './moviesParser';
