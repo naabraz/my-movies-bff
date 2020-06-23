@@ -24,5 +24,10 @@ describe('Given Request module', () => {
       await request('test');
       expect(fetch).toHaveBeenCalledWith('API_URL/test?api_key=API_KEY');
     });
+
+    it('Should call fetch to request api with params', async () => {
+      await request('test', '&params');
+      expect(fetch).toHaveBeenCalledWith('API_URL/test?api_key=API_KEY&params');
+    });
   });
 });
