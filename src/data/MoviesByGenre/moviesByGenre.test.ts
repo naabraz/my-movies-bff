@@ -1,4 +1,4 @@
-import { movieGenres } from '~data';
+import { moviesByGenre } from '~data';
 import { request } from '~helpers';
 
 jest.mock('~helpers', () => ({
@@ -7,14 +7,14 @@ jest.mock('~helpers', () => ({
   moviesParser: jest.fn(),
 }));
 
-describe('Given movieGenres module', () => {
+describe('Given moviesByGenre module', () => {
   it('Should have getMovieGenres function', () => {
-    expect(movieGenres).toEqual(expect.any(Function));
+    expect(moviesByGenre).toEqual(expect.any(Function));
   });
 
-  describe('Given popularMovies function call', () => {
+  describe('Given moviesByGenre function call', () => {
     it('Should call doRequest', async () => {
-      await movieGenres(2);
+      await moviesByGenre(2);
       expect(request).toHaveBeenCalled();
     });
   });
