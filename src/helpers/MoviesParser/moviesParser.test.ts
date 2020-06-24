@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { moviesParser } from '~helpers';
 
-jest.mock('~helpers/imageConfig', () => ({
+jest.mock('~helpers', () => ({
+  ...jest.requireActual('~helpers'),
   imageConfig: jest.fn().mockResolvedValue({
     baseUrl: 'baseUrl',
     posterSize: '300',
