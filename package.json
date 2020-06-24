@@ -9,7 +9,8 @@
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'server.ts' --exec 'ts-node' server.ts -e ts,graphql",
     "test": "jest",
-    "postinstall": "link-module-alias"
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
   },
   "_moduleAliases": {
     "~root": ".",
