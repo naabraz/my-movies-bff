@@ -1,6 +1,5 @@
 language: node_js
 node_js: 12.14.1
-os: osx
 
 stages:
   - name: test
@@ -12,7 +11,6 @@ jobs:
       language: node_js
       node_js: 12.14.1
       install:
-        - rm -rf node_modules
         - yarn install
         - yarn global add codecov
       script:
