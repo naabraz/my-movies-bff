@@ -1,0 +1,1 @@
+export { moviesParser } from './moviesParser';
