@@ -1,1 +1,0 @@
-export { popularMoviesResolver } from './popularMovies';
