@@ -1,1 +1,0 @@
-export { popularMovies } from './popularMovies';
