@@ -1,1 +1,0 @@
-export { moviesParser } from './moviesParser';
