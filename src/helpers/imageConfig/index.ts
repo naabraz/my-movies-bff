@@ -1,0 +1,1 @@
+export { imageConfig } from './imageConfig';
