@@ -1,1 +1,0 @@
-export { movieGenresResolver } from './movieGenres';
