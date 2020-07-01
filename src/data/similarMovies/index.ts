@@ -1,0 +1,1 @@
+export { similarMovies } from './similarMovies';
