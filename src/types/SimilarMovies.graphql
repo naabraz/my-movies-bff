@@ -1,0 +1,8 @@
+type Movie {
+  id: ID,
+  posterPath: String
+}
+
+type Query {
+  similarMovies: [Movie]
+}
