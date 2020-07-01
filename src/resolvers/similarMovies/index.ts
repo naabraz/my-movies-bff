@@ -1,0 +1,1 @@
+export { similarMoviesResolver } from './similarMovies';

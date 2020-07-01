@@ -1,6 +1,6 @@
 type MovieGenres {
-  id: ID,
-  name: String,
+  id: ID
+  name: String
 }
 
 extend type Query {
