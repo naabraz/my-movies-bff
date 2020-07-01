@@ -19,7 +19,7 @@ describe('Given MoviesByGenre resolver', () => {
     expect(moviesByGenreResolver.Query).toHaveProperty('moviesByGenre');
   });
 
-  describe('Given moviesByGenree query', () => {
+  describe('Given moviesByGenre query', () => {
     it('Should call getMovieGenres when movieGenres query is called', async () => {
       await moviesByGenreResolver.Query.moviesByGenre(
         { genreId: 3 },
