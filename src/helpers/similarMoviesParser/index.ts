@@ -1,0 +1,1 @@
+export { similarMoviesParser } from './similarMoviesParser';
