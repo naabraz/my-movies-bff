@@ -1,8 +1,8 @@
-import { similarMovies } from '~data';
-import { resolvers } from '~resolvers';
+import { similarMovies } from '_data';
+import { resolvers } from '_resolvers';
 import { similarMoviesResolver } from './similarMovies';
 
-jest.mock('~data', () => ({
+jest.mock('_data', () => ({
   similarMovies: jest.fn().mockResolvedValue('similarMovies'),
 }));
 

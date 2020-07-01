@@ -1,5 +1,5 @@
-import { similarMovies } from '~data';
-import { SimilarMovie } from '~interfaces';
+import { similarMovies } from '_data';
+import { SimilarMovie } from '_interfaces';
 
 export const similarMoviesResolver = {
   Query: {

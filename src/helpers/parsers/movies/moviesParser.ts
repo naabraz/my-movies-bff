@@ -1,5 +1,5 @@
-import { imageConfig } from '~helpers';
-import { Movie, MoviesResponse } from '~interfaces';
+import { imageConfig } from '_helpers';
+import { Movie, MoviesResponse } from '_interfaces';
 
 export const moviesParser = async (movies: {
   results: MoviesResponse[];

@@ -1,5 +1,5 @@
-import { movieGenres } from '~data';
-import { MovieGenres } from '~interfaces';
+import { movieGenres } from '_data';
+import { MovieGenres } from '_interfaces';
 
 export const movieGenresResolver = {
   Query: {

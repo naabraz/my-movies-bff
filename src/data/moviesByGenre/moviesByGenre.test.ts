@@ -1,7 +1,7 @@
-import { moviesByGenre } from '~data';
-import { request } from '~helpers';
+import { moviesByGenre } from '_data';
+import { request } from '_helpers';
 
-jest.mock('~helpers', () => ({
+jest.mock('_helpers', () => ({
   request: jest.fn().mockImplementation(() => ({ results: [] })),
   imageConfig: jest.fn(),
   moviesParser: jest.fn(),

@@ -1,8 +1,8 @@
-import { moviesByGenre } from '~data';
-import { resolvers } from '~resolvers';
+import { moviesByGenre } from '_data';
+import { resolvers } from '_resolvers';
 import { moviesByGenreResolver } from './moviesByGenre';
 
-jest.mock('~data', () => ({
+jest.mock('_data', () => ({
   moviesByGenre: jest.fn().mockResolvedValue('moviesByGenre'),
 }));
 

@@ -13,13 +13,13 @@
     "preinstall": "command -v link-module-alias && link-module-alias clean || true"
   },
   "_moduleAliases": {
-    "~root": ".",
-    "~data": "src/data",
-    "~helpers": "src/helpers",
-    "~interfaces": "src/interfaces",
-    "~resolvers": "src/resolvers",
-    "~schema": "src/schema",
-    "~types": "src/types"
+    "_root": ".",
+    "_data": "src/data",
+    "_helpers": "src/helpers",
+    "_interfaces": "src/interfaces",
+    "_resolvers": "src/resolvers",
+    "_schema": "src/schema",
+    "_types": "src/types"
   },
   "repository": "git@github.com:naabraz/my-movies-bff.git",
   "author": "Natalia Braz <naabraz@gmail.com>",

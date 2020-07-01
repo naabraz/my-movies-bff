@@ -1,5 +1,5 @@
-import { request, similarMoviesParser } from '~helpers';
-import { SimilarMovie } from '~interfaces';
+import { request, similarMoviesParser } from '_helpers';
+import { SimilarMovie } from '_interfaces';
 
 export const similarMovies = async (
   movieId: number,

@@ -1,5 +1,5 @@
-import { imageConfig } from '~helpers';
-import { MoviesResponse, SimilarMovie } from '~interfaces';
+import { imageConfig } from '_helpers';
+import { MoviesResponse, SimilarMovie } from '_interfaces';
 
 export const similarMoviesParser = async (movies: {
   results: MoviesResponse[];

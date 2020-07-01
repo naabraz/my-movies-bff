@@ -1,5 +1,5 @@
-import { popularMovies } from '~data';
-import { Movie } from '~interfaces';
+import { popularMovies } from '_data';
+import { Movie } from '_interfaces';
 
 export const popularMoviesResolver = {
   Query: {

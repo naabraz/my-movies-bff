@@ -1,8 +1,8 @@
-import { popularMovies } from '~data';
-import { resolvers } from '~resolvers';
+import { popularMovies } from '_data';
+import { resolvers } from '_resolvers';
 import { popularMoviesResolver } from './popularMovies';
 
-jest.mock('~data', () => ({
+jest.mock('_data', () => ({
   popularMovies: jest.fn().mockResolvedValue('popularMovies'),
 }));
 

@@ -11,12 +11,12 @@
     "no-implicit-dependencies": [
       true,
       [
-        "~data",
-        "~helpers",
-        "~interfaces",
-        "~resolvers",
-        "~schema",
-        "~types"
+        "_data",
+        "_helpers",
+        "_interfaces",
+        "_resolvers",
+        "_schema",
+        "_types"
         ]
       ]
   },

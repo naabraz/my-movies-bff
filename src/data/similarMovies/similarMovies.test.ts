@@ -1,7 +1,7 @@
-import { similarMovies } from '~data';
-import { request, similarMoviesParser } from '~helpers';
+import { similarMovies } from '_data';
+import { request, similarMoviesParser } from '_helpers';
 
-jest.mock('~helpers', () => ({
+jest.mock('_helpers', () => ({
   request: jest.fn().mockImplementation(() => ({ results: [] })),
   imageConfig: jest.fn(),
   similarMoviesParser: jest.fn(),

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { request } from '~helpers';
+import { request } from '_helpers';
 import { imageConfig } from './';
 
-jest.mock('~helpers', () => ({
+jest.mock('_helpers', () => ({
   request: jest.fn().mockResolvedValue({
     images: {
       secure_base_url: 'baseUrl',
