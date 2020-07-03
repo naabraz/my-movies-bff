@@ -9,7 +9,7 @@ export const imageConfig = async (): Promise<ImagesConfig> => {
 
   return {
     baseUrl: secure_base_url,
-    posterSize: poster_sizes[2],
+    posterSize: poster_sizes[0],
     backdropSize: backdrop_sizes[0],
   };
 };
