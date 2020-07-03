@@ -5,5 +5,5 @@ type SimilarMovie {
 }
 
 extend type Query {
-  similarMovies(movieId: ID): [SimilarMovie]
+  similarMovies(movieId: String): [SimilarMovie]
 }

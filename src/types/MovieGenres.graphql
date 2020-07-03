@@ -4,5 +4,5 @@ type MovieGenres {
 }
 
 extend type Query {
-  movieGenres(movieId: ID): [MovieGenres]
+  movieGenres(movieId: String): [MovieGenres]
 }
