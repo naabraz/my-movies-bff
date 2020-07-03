@@ -1,10 +1,10 @@
 import { similarMovies } from '~data';
-import { request, similarMoviesParser } from '~helpers';
+import { moviesParser, request } from '~helpers';
 
 jest.mock('~helpers', () => ({
   request: jest.fn().mockImplementation(() => ({ results: [] })),
   imageConfig: jest.fn(),
-  similarMoviesParser: jest.fn(),
+  moviesParser: jest.fn(),
 }));
 
 describe('Given similarMovies data', () => {
@@ -19,7 +19,7 @@ describe('Given similarMovies data', () => {
     });
 
     it('Should return parsed similar movies', async () => {
-      expect(similarMoviesParser).toHaveBeenCalled();
+      expect(moviesParser).toHaveBeenCalled();
     });
   });
 });
