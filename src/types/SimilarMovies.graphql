@@ -1,9 +1,3 @@
-type SimilarMovie {
-  id: ID
-  title: String
-  posterPath: String
-}
-
 extend type Query {
-  similarMovies(movieId: String): [SimilarMovie]
+  similarMovies(movieId: String): [Movie]
 }

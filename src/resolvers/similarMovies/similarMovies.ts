@@ -1,11 +1,9 @@
 import { similarMovies } from '~data';
-import { SimilarMovie } from '~interfaces';
+import { Movie } from '~interfaces';
 
 export const similarMoviesResolver = {
   Query: {
-    async similarMovies(
-      ...args: { movieId: number }[]
-    ): Promise<SimilarMovie[]> {
+    async similarMovies(...args: { movieId: number }[]): Promise<Movie[]> {
       const [, param] = args;
       const { movieId } = param;
       return similarMovies(movieId);
