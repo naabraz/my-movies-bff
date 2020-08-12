@@ -1,40 +1,41 @@
 language: node_js
 node_js: 12.14.1
+
 stages:
-- name: test
-  if: branch = master
-- name: deploy
-  if: branch = master
+  - name: test
+    if: branch = master
+  - name: deploy
+    if: type != pull_request AND branch = master
 jobs:
   include:
-  - stage: test
-    language: node_js
-    node_js: 12.14.1
-    install:
-    - yarn install
-    - yarn global add codecov
-    script:
-    - yarn lint
-    - yarn test --coverage
-    after_success:
-    - codecov
-  - stage: deploy
-    language: node_js
-    node_js: 12.14.1
-    addons:
-      ssh_known_hosts: nataliabraz.dev
-    before_install:
-      - openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv
-      -in travis_rsa.enc -out travis_rsa -d
-    - chmod 600 travis_rsa
-    - mv travis_rsa ~/.ssh/id_rsa
-    install:
-    - export TRAVIS_BUILD_DIR=$(pwd)
-    - mkdir $HOME/src
-    - cd $HOME/src
-    - git clone git@github.com:naabraz/my-movies-bff.git
-    - cd my-movies-bff
-    - yarn install
-    - cd $TRAVIS_BUILD_DIR
-    after_success:
-    - bash ./deploy.sh
+    - stage: test
+      language: node_js
+      node_js: 12.14.1
+      install:
+        - yarn install
+        - yarn global add codecov
+      script:
+        - yarn lint
+        - yarn test --coverage
+      after_success:
+        - codecov
+    - stage: deploy
+      language: node_js
+      node_js: 12.14.1
+      addons:
+        ssh_known_hosts: nataliabraz.dev
+      before_install:
+        - openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv
+          -in travis_rsa.enc -out travis_rsa -d
+        - chmod 600 travis_rsa
+        - mv travis_rsa ~/.ssh/id_rsa
+      install:
+        - export TRAVIS_BUILD_DIR=$(pwd)
+        - mkdir $HOME/src
+        - cd $HOME/src
+        - git clone https://github.com/naabraz/my-movies-bff.git
+        - cd my-movies-bff
+        - yarn install
+        - cd $TRAVIS_BUILD_DIR
+      after_success:
+        - bash ./deploy.sh
