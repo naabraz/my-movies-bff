@@ -5,35 +5,40 @@ stages:
   if: type = pull_request AND branch = master
 - name: deploy
   if: type != pull_request AND branch = master
+before_install:
+  - openssl aes-256-cbc -K $encrypted_355e94ba1091_key -iv $encrypted_355e94ba1091_iv
+    -in super_secret.txt.enc -out super_secret.txt -d
 jobs:
   include:
   - stage: test
     language: node_js
     node_js: 12.14.1
     install:
-      - yarn install
-      - yarn global add codecov
+    - yarn install
+    - yarn global add codecov
     script:
-      - yarn lint
-      - yarn test --coverage
+    - yarn lint
+    - yarn test --coverage
     after_success:
-      - codecov
+    - codecov
   - stage: deploy
     language: node_js
     node_js: 12.14.1
     addons:
       ssh_known_hosts: nataliabraz.dev
     install:
-      - export TRAVIS_BUILD_DIR=$(pwd)
-      - mkdir $HOME/src
-      - cd $HOME/src
-      - git clone https://github.com/naabraz/my-movies-bff.git
-      - cd my-movies-bff
-      - yarn install
-      - cd $TRAVIS_BUILD_DIR
+    - export TRAVIS_BUILD_DIR=$(pwd)
+    - mkdir $HOME/src
+    - cd $HOME/src
+    - git clone https://github.com/naabraz/my-movies-bff.git
+    - cd my-movies-bff
+    - yarn install
+    - cd $TRAVIS_BUILD_DIR
     after_success:
-      - bash ./deploy.sh
+    - bash ./deploy.sh
     before_install:
-      - openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv -in travis_rsa.enc -out travis_rsa -d
-      - chmod 600 travis_rsa
-      - mv travis_rsa ~/.ssh/id_rsa
+    - openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv
+      -in travis_rsa.enc -out travis_rsa -d
+    - chmod 600 travis_rsa
+    - mv travis_rsa ~/.ssh/id_rsa
+
