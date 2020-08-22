@@ -36,6 +36,6 @@ jobs:
       - yarn install
       - cd $TRAVIS_BUILD_DIR
     after_success:
-      - bash ./pack.sh
-      - bash ./send.sh
-      - bash ./connect.sh
+      - bash ./scripts/pack.sh
+      - bash ./scripts/send.sh
+      - bash ./scripts/connect.sh
