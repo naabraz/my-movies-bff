@@ -6,7 +6,9 @@ stages:
 - name: deploy
   if: type != pull_request AND branch = master
 before_install:
-  - openssl aes-256-cbc -K $encrypted_355e94ba1091_key -iv $encrypted_355e94ba1091_iv -in super_secret.txt.enc -out super_secret.txt -d
+  - openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv -in travis_rsa.enc -out travis_rsa -d
+  - chmod 600 travis_rsa
+  - mv travis_rsa ~/.ssh/id_rsa
 jobs:
   include:
   - stage: test
@@ -35,9 +37,3 @@ jobs:
     - cd $TRAVIS_BUILD_DIR
     after_success:
     - bash ./deploy.sh
-    before_install:
-    - openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv
-      -in travis_rsa.enc -out travis_rsa -d
-    - chmod 600 travis_rsa
-    - mv travis_rsa ~/.ssh/id_rsa
-
