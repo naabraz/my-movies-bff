@@ -7,6 +7,7 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
 
   tar -czf package.tgz .
   scp package.tgz travis@nataliabraz.dev:~/build
+  echo "package made"
 else
   echo "Not deploying, since this branch isn't master."
 fi
