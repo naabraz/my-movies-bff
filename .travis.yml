@@ -35,5 +35,7 @@ jobs:
       - cd my-movies-bff
       - yarn install
       - cd $TRAVIS_BUILD_DIR
-    script:
-      - bash ./deploy.sh
+    after_success:
+      - bash ./pack.sh
+      - bash ./send.sh
+      - bash ./connect.sh
