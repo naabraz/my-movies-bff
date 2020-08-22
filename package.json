@@ -10,7 +10,8 @@
     "build:dev": "nodemon 'server.ts' --exec 'ts-node' server.ts -e ts,graphql",
     "test": "jest",
     "postinstall": "link-module-alias",
-    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true",
+    "testing": "testing"
   },
   "_moduleAliases": {
     "~root": ".",
