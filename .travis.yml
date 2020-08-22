@@ -37,5 +37,3 @@ jobs:
       - cd $TRAVIS_BUILD_DIR
     after_success:
       - bash ./deploy.sh
-      - bash ./send.sh
-      - bash ./untar.sh
