@@ -14,7 +14,6 @@ before_install:
 jobs:
   include:
   - stage: test
-    name: "Unit Tests"
     install:
       - yarn install
       - yarn global add codecov
@@ -24,8 +23,5 @@ jobs:
     after_success:
       - codecov
   - stage: deploy
-    name: "Deploy"
-    before_install:
-      - rm -rf node_modules
     after_success:
       - bash ./scripts/deploy.sh
