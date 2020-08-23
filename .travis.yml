@@ -1,10 +1,10 @@
 language: node_js
 node_js: 12.14.1
 stages:
-- name: test
-  if: type = pull_request AND branch = master
-- name: deploy
-  if: type != pull_request AND branch = master
+  - name: test
+    if: type = pull_request AND branch = master
+  - name: deploy
+    if: type != pull_request AND branch = master
 addons:
   ssh_known_hosts: nataliabraz.dev
 before_install:
@@ -14,26 +14,14 @@ before_install:
 jobs:
   include:
   - stage: test
-    language: node_js
-    node_js: 12.14.1
     install:
-    - yarn install
-    - yarn global add codecov
-    script:
-    - yarn lint
-    - yarn test --coverage
-    after_success:
-    - codecov
-  - stage: deploy
-    language: node_js
-    node_js: 12.14.1
-    install:
-      - export TRAVIS_BUILD_DIR=$(pwd)
-      - mkdir $HOME/src
-      - cd $HOME/src
-      - git clone https://github.com/naabraz/my-movies-bff.git
-      - cd my-movies-bff
       - yarn install
-      - cd $TRAVIS_BUILD_DIR
+      - yarn global add codecov
+    script:
+      - yarn lint
+      - yarn test --coverage
     after_success:
-      - bash ./scripts/connect.sh
+      - codecov
+  - stage: deploy
+    after_success:
+      - bash ./scripts/deploy.sh
