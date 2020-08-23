@@ -1,12 +1,10 @@
 language: node_js
 node_js: 12.14.1
 stages:
-  - test
-  - deploy
   - name: test
-    if: NOT branch = master AND type = pull_request
+    if: type = pull_request AND branch = master
   - name: deploy
-    if: branch = master
+    if: type != pull_request AND branch = master
 addons:
   ssh_known_hosts: nataliabraz.dev
 before_install:
@@ -27,5 +25,7 @@ jobs:
       - codecov
   - stage: deploy
     name: "Deploy"
+    before_install:
+      - rm -rf node_modules
     after_success:
       - bash ./scripts/deploy.sh
