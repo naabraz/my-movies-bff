@@ -1,4 +1,4 @@
-#!/bin/bash
-set -xe
+#!/usr/bin/env sh
+set -x
 
-tar zxvf package.tgz
+tar zxvf package.tgz -C .
