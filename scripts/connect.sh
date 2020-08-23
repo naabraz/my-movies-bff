@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 set -x
 
-tar -czf package.tgz . && \
-scp package.tgz travis@nataliabraz.dev:~/build && \
-ssh travis@nataliabraz.dev 'bash -s' < ./untar.sh
+cd $HOME/build/naabraz && \
+tar -czf package.tgz my-movies-bff && \
+scp package.tgz travis@nataliabraz.dev:~ && \
+cd $TRAVIS_BUILD_DIR && \
+ssh travis@nataliabraz.dev 'bash -s' < ./scripts/untar.sh
