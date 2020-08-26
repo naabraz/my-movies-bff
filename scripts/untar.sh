@@ -5,5 +5,6 @@ rm -rf build && \
 mkdir build && \
 mv package.tgz build && \
 cd build && \
-tar zxvf package.tgz -C .
+tar zxvf package.tgz -C . && \
+mv ~/.env my-movies-bff && \
 rm package.tgz
