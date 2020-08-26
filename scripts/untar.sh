@@ -7,4 +7,7 @@ mv package.tgz build && \
 cd build && \
 tar zxvf package.tgz -C . && \
 cp ~/.env my-movies-bff && \
-rm package.tgz
+rm package.tgz && \
+cd my-movies-bff && \
+yarn stop:prod && \
+yarn start:prod

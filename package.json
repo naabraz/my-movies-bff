@@ -6,6 +6,8 @@
   "scripts": {
     "lint": "eslint '**/*.ts'",
     "prepush": "yarn run lint",
+    "start:prod": "pm2 start server.ts --name my-movies-bff",
+    "stop:prod": "pm2 stop my-movies-bff",
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'server.ts' --exec 'ts-node' server.ts -e ts,graphql",
     "test": "jest",
