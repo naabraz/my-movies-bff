@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 const server = new ApolloServer({ schema });
 
-app.use('*', cors());
+app.use(cors());
 
 server.applyMiddleware({ app, path: '/graphql' });
 
