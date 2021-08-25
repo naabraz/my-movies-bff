@@ -1,8 +1,8 @@
 type MovieGenres {
-  id: ID
+  id: Int
   name: String
 }
 
 extend type Query {
-  movieGenres(movieId: String): [MovieGenres]
+  movieGenres(movieId: Int): [MovieGenres]
 }

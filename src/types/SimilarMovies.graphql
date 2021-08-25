@@ -1,3 +1,3 @@
 extend type Query {
-  similarMovies(movieId: String): [Movie]
+  similarMovies(movieId: Int): [Movie]
 }
