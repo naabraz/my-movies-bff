@@ -1,0 +1,1 @@
+export { genreListResolver } from './genreList';
